@@ -1,25 +1,7 @@
 import React, { useRef } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
-import { OrbitControls, OrthographicCamera } from "@react-three/drei";
 import type { ShaderMaterial } from "three";
-import { DoubleSide, Color, Vector2, Vector3 } from "three";
-
-export const defaults = {
-  cameraPosition: [0.3, 4.8, 1.43] as [number, number, number],
-  cameraZoom: 2205,
-  color1: `#ff8a45`,
-  color2: `#ff6ec7`,
-  color3: `#720d4a`,
-  backgroundColor: `#000`,
-  colorSmoothing: 0.5,
-  foldsSpace: 0.05,
-  foldsHeight: 4.0,
-  waveFrequency: 1.2,
-  waveAmplitude: 0.83,
-  waveDirection: [-0.1, 1] as [number, number],
-  pause: false,
-  speed: 2.16
-};
+import { DoubleSide, Color, Vector2 } from "three";
 
 const perlin = `
 #define GLSLIFY 1
@@ -129,7 +111,7 @@ const Mesh: React.FC = () => {
   const shader = useRef<ShaderMaterial>(null);
   useFrame(() => {
     if (shader.current) {
-      shader.current.uniforms.time.value += 0.001 * defaults.speed;
+      shader.current.uniforms.time.value += 0.001 * 2.16;
     }
   });
 
@@ -141,16 +123,16 @@ const Mesh: React.FC = () => {
         side={DoubleSide}
         attach="material"
         uniforms={{
-          color1: { value: new Color(defaults.color1) },
-          color2: { value: new Color(defaults.color2) },
-          color3: { value: new Color(defaults.color3) },
-          backgroundColor: { value: new Color(defaults.backgroundColor) },
-          colorSmoothing: { value: defaults.colorSmoothing },
-          foldFrequency: { value: defaults.foldsSpace },
-          foldHeight: { value: defaults.foldsHeight },
-          waveFrequency: { value: defaults.waveFrequency },
-          waveAmplitude: { value: defaults.waveAmplitude },
-          waveDirection: { value: new Vector2(...defaults.waveDirection) },
+          color1: { value: new Color(`#ff8a45`) },
+          color2: { value: new Color(`#ff6ec7`) },
+          color3: { value: new Color(`#720d4a`) },
+          backgroundColor: { value: new Color(`#000`) },
+          colorSmoothing: { value: 0.5 },
+          foldFrequency: { value: 0.05 },
+          foldHeight: { value: 4.0 },
+          waveFrequency: { value: 1.2 },
+          waveAmplitude: { value: 0.83 },
+          waveDirection: { value: new Vector2(-0.1, 1) },
           time: { value: 0 }
         }}
         vertexShader={vertexShader}
@@ -161,13 +143,12 @@ const Mesh: React.FC = () => {
 };
 
 export const Waves: React.FC = () => (
-  <Canvas style={{ position: `absolute` }} gl={{ preserveDrawingBuffer: true }}>
-    <OrthographicCamera
-      makeDefault
-      position={new Vector3(...defaults.cameraPosition)}
-      zoom={defaults.cameraZoom}
-    />
-    <OrbitControls enablePan={false} enableRotate={false} enableZoom={false} />
+  <Canvas
+    orthographic
+    gl={{ preserveDrawingBuffer: true }}
+    camera={{ position: [0.3, 4.8, 1.43], zoom: 2205 }}
+    style={{ position: `absolute` }}
+  >
     <Mesh />
   </Canvas>
 );
