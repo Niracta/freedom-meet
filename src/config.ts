@@ -1,38 +1,26 @@
 import type { SiteConfig } from "./internals/types";
 
 export const config: SiteConfig = {
-  name: `freedom links`,
-  title: `a self-hostable microsite for sharing your social links`,
+  name: `Rachel Taylor`,
+  title: `Design • Writing • Process`,
   // You can change the order of the links array below to set
   // the sort order for the links on your page
   links: [
-    // You'll want to delete these entries, unless you
-    // want a deploy link on your site! They are here to
-    // demonstrate how the config works.
-    {
-      platform: `Vercel`,
-      url: `https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fsaeris%2Ffreedom-links`,
-      label: `Deploy to Vercel`
-    },
-    {
-      platform: `Github`,
-      url: `https://github.com/saeris/freedom-links`,
-      label: `Source Code`
-    },
+    { platform: `Linkedin`, url: `https://www.linkedin.com/in/rtaylordesign/` },
+    { platform: `Gmail`, url: `mailto:designer.racheltaylor@gmail.com`, label:`Email` },
+    { platform: `Spotify`, url: `https://open.spotify.com/user/8btjsb2b9tprvld11rp5x0pol?si=7b438d96f2704417` },
+    { platform: `Instagram`, url: `https://www.instagram.com/the_crow_wizard/` },
+    { platform: `Twitter`, url: `https://twitter.com/rtaylor_design` },
+    { platform: `Github`, url: `https://github.com/Niracta` },
     // Some examples of common platforms to link to
-    { platform: `Twitter`, url: `` },
     { platform: `Facebook`, url: `` },
-    { platform: `Instagram`, url: `` },
     { platform: `Twitch`, url: `` },
     { platform: `Youtube`, url: `` },
     { platform: `Tiktok`, url: `` },
     { platform: `Snapchat`, url: `` },
     { platform: `Mastodon`, url: `` },
-    { platform: `Linkedin`, url: `` },
     { platform: `Patreon`, url: `` },
-    { platform: `Discord`, url: `` },
     { platform: `Bandcamp`, url: `` },
-    { platform: `Spotify`, url: `` },
     { platform: `Soundcloud`, url: `` },
     { platform: `Tumblr`, url: `` },
     { platform: `Artstation`, url: `` },
