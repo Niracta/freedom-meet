@@ -1961,12 +1961,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react-dom@npm:18.0.9":
-  version: 18.0.9
-  resolution: "@types/react-dom@npm:18.0.9"
+"@types/react-dom@npm:18.2.4":
+  version: 18.2.4
+  resolution: "@types/react-dom@npm:18.2.4"
   dependencies:
     "@types/react": "*"
-  checksum: e744e3feba25fc43733289d4df4d9c0e59fcca7f34e8c89d75f81a339accb2bd70236d69382d47d2c0ad06a1529b2e56aa6171fe175854d60e07156ddceedfcb
+  checksum: 8301f35cf1cbfec8c723e9477aecf87774e3c168bd457d353b23c45064737213d3e8008b067c6767b7b08e4f2b3823ee239242a6c225fc91e7f8725ef8734124
   languageName: node
   linkType: hard
 
@@ -1999,14 +1999,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react@npm:18.0.26":
-  version: 18.0.26
-  resolution: "@types/react@npm:18.0.26"
+"@types/react@npm:18.2.6":
+  version: 18.2.6
+  resolution: "@types/react@npm:18.2.6"
   dependencies:
     "@types/prop-types": "*"
     "@types/scheduler": "*"
     csstype: ^3.0.2
-  checksum: b62f0ea3cdfa68e106391728325057ad36f1bde7ba2dfae029472c47e01e482bc77c6ba4f1dad59f3f04ee81cb597618ff7c30a33c157c0a20462b6dd6aa2d4d
+  checksum: dea9d232d8df7ac357367a69dcb557711ab3d5501807ffa77cebeee73d49ee94d095f298e36853c63ed47cce097eee4c7eae2aaa8c02fac3f0171ec1b523a819
   languageName: node
   linkType: hard
 
@@ -3844,12 +3844,12 @@ __metadata:
     "@saeris/eslint-config": ^2.3.1
     "@types/eslint": ^8.4.10
     "@types/node": 18.11.17
-    "@types/react": 18.0.26
-    "@types/react-dom": 18.0.9
+    "@types/react": 18.2.6
+    "@types/react-dom": 18.2.4
     "@types/three": ^0.152.0
     "@vercel/og": ^0.0.21
     eslint: ^8.30.0
-    next: ^13.0.7
+    next: ^13.4.1
     next-pwa: ^5.6.0
     postcss: ^8.4.20
     postcss-flexbugs-fixes: ^5.0.2
@@ -3858,10 +3858,10 @@ __metadata:
     prettier: ^2.8.1
     react: ^18.2.0
     react-dom: ^18.2.0
-    react-icons: ^4.7.1
+    react-icons: ^4.8.0
     three: ^0.152.2
-    typescript: 4.9.4
-    typescript-plugin-css-modules: ^4.1.1
+    typescript: 5.0.4
+    typescript-plugin-css-modules: ^5.0.1
   languageName: unknown
   linkType: soft
 
@@ -5219,7 +5219,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"next@npm:^13.0.7":
+"next@npm:^13.4.1":
   version: 13.4.1
   resolution: "next@npm:13.4.1"
   dependencies:
@@ -6253,7 +6253,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-icons@npm:^4.7.1":
+"react-icons@npm:^4.8.0":
   version: 4.8.0
   resolution: "react-icons@npm:4.8.0"
   peerDependencies:
@@ -7270,9 +7270,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript-plugin-css-modules@npm:^4.1.1":
-  version: 4.2.3
-  resolution: "typescript-plugin-css-modules@npm:4.2.3"
+"typescript-plugin-css-modules@npm:^5.0.1":
+  version: 5.0.1
+  resolution: "typescript-plugin-css-modules@npm:5.0.1"
   dependencies:
     "@types/postcss-modules-local-by-default": ^4.0.0
     "@types/postcss-modules-scope": ^3.0.1
@@ -7291,12 +7291,22 @@ __metadata:
     stylus: ^0.59.0
     tsconfig-paths: ^4.1.2
   peerDependencies:
-    typescript: ">=3.9.0"
-  checksum: 55455068b92cee070c024fa059283bdad5a4b7fa16615e13634a62c6698869ce44ff92e959de5aa2002abe409770f18584e6b982c69809d2d6319897a3234729
+    typescript: ">=4.0.0"
+  checksum: 5d6d6003c97ce821904981273f9d6e9c1bb27b1b712b187fd17255eb27634a9dfe0a5e961b5dad3d1274c90161439736b65b605fd55c22d88907275a8abda9c8
   languageName: node
   linkType: hard
 
-"typescript@npm:4.9.4, typescript@npm:^4.8.3":
+"typescript@npm:5.0.4":
+  version: 5.0.4
+  resolution: "typescript@npm:5.0.4"
+  bin:
+    tsc: bin/tsc
+    tsserver: bin/tsserver
+  checksum: 82b94da3f4604a8946da585f7d6c3025fff8410779e5bde2855ab130d05e4fd08938b9e593b6ebed165bda6ad9292b230984f10952cf82f0a0ca07bbeaa08172
+  languageName: node
+  linkType: hard
+
+"typescript@npm:^4.8.3":
   version: 4.9.4
   resolution: "typescript@npm:4.9.4"
   bin:
@@ -7306,7 +7316,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@patch:typescript@4.9.4#~builtin<compat/typescript>, typescript@patch:typescript@^4.8.3#~builtin<compat/typescript>":
+"typescript@patch:typescript@5.0.4#~builtin<compat/typescript>":
+  version: 5.0.4
+  resolution: "typescript@patch:typescript@npm%3A5.0.4#~builtin<compat/typescript>::version=5.0.4&hash=7ad353"
+  bin:
+    tsc: bin/tsc
+    tsserver: bin/tsserver
+  checksum: 6a1fe9a77bb9c5176ead919cc4a1499ee63e46b4e05bf667079f11bf3a8f7887f135aa72460a4c3b016e6e6bb65a822cb8689a6d86cbfe92d22cc9f501f09213
+  languageName: node
+  linkType: hard
+
+"typescript@patch:typescript@^4.8.3#~builtin<compat/typescript>":
   version: 4.9.4
   resolution: "typescript@patch:typescript@npm%3A4.9.4#~builtin<compat/typescript>::version=4.9.4&hash=7ad353"
   bin:
