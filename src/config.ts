@@ -8,7 +8,7 @@ export const config: SiteConfig = {
   // You can change the order of the links array below to set
   // the sort order for the links on your page
   links: [
-    { Icon: HiGlobeAmericas, url: `https://www.linkedin.com/in/rtaylordesign/`, label:`Portfolio` },
+    { Icon: HiGlobeAmericas, url: `https://rtaylor.design`, label:`Portfolio` },
     { Icon: SiLinkedin, url: `https://www.linkedin.com/in/rtaylordesign/`, label:`LinkedIn` },
     { Icon: SiGmail, url: `mailto:designer.racheltaylor@gmail.com`, label:`Email` },
     { Icon: SiSpotify, url: `https://open.spotify.com/user/8btjsb2b9tprvld11rp5x0pol?si=7b438d96f2704417`, label:`Spotify` },
