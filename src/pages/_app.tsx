@@ -63,7 +63,7 @@ const _app: React.FC<AppProps> = ({ Component, pageProps }) => (
       <link rel="manifest" href="/manifest.json" />
       <link rel="manifest" href="/site.webmanifest" />
       <meta name="description" content={config.title} />
-      <meta name="image" content="/api/og" />
+      <meta name="image" content="*.vercel.app/api/og" />
       {/* OpenGraph */}
       <meta property="og:site_name" content={config.name} />
       <meta property="og:url" content={process.env.NEXT_PUBLIC_VERCEL_URL} />
@@ -71,13 +71,13 @@ const _app: React.FC<AppProps> = ({ Component, pageProps }) => (
       <meta property="og:title" content={config.name} />
       <meta property="og:description" content={config.title} />
       <meta property="og:locale" content="en_US" />
-      <meta property="og:image" content="/api/og" />
+      <meta property="og:image" content="*.vercel.app/api/og" />
       <meta property="og:image:alt" content={config.title} />
       {/* Twitter */}
       <meta name="twitter:title" content={config.name} />
       <meta name="twitter:description" content={config.title} />
       <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:image" content="/api/og" />
+      <meta name="twitter:image" content="*.vercel.app/api/og" />
       <meta name="twitter:image:alt" content={config.name} />
       {/* iOS */}
       <meta
