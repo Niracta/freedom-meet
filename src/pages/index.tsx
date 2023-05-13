@@ -1,12 +1,12 @@
 import React from "react";
-import { NextPage } from "next";
+import type { NextPage } from "next";
 import Image from "next/image";
 import { config } from "../config";
 import avatar from "../../public/avatar.png";
 import { Waves } from "../internals/Waves";
 import styles from "../theme.module.css";
 
-const Home: React.FC = () => (
+const Home: NextPage = () => (
   <>
     <Waves />
     <main className={styles.container}>
@@ -32,7 +32,7 @@ const Home: React.FC = () => (
           ))}
       </ul>
     </main>
-  </> 
+  </>
 );
 
 export default Home;
