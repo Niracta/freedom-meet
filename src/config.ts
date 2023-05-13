@@ -1,5 +1,5 @@
 import { HiGlobeAmericas } from "react-icons/hi2";
-import { SiLinkedin, SiLinkedin, SiGmail, SiSpotify, SiInstagram, SiTwitter, SiGithub} from "react-icons/si";
+import { SiLinkedin, SiGmail, SiSpotify, SiInstagram, SiTwitter, SiGithub} from "react-icons/si";
 import type { SiteConfig } from "./internals/types";
 
 export const config: SiteConfig = {
