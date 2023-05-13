@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/quotes */
 import { ImageResponse } from "next/server";
 
 export const alt = "Rachel Taylor Design";
@@ -22,6 +23,7 @@ export default (): ImageResponse =>
           justifyContent: `center`
         }}
       >
+        {/* eslint-disable-next-line */}
         <img src="/logo.svg" width={32} height={32} />
       </div>
     ),

@@ -1,7 +1,7 @@
 {
   "$schema": "https://json.schemastore.org/web-manifest-combined.json",
-  "short_name": "freedom-links",
-  "name": "freedom-links",
+  "short_name": "Rachel Taylor",
+  "name": "Rachel Taylor",
   "start_url": "/",
   "display": "standalone",
   "orientation": "portrait-primary",
@@ -10,7 +10,7 @@
     {
       "src": "icon.ico",
       "sizes": "64x64 32x32 24x24 16x16",
-      "type": "image/x-icon"
+      "type": "image/png"
     }
   ]
 }

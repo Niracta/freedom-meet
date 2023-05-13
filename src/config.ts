@@ -1,24 +1,22 @@
-import { SiGithub, SiVercel } from "react-icons/si";
+import { HiGlobeAmericas } from "react-icons/hi2";
+import { SiLinkedin, SiGmail, SiSpotify, SiInstagram, SiTwitter, SiGithub } from "react-icons/si";
 import type { SiteConfig } from "./internals/types";
 
 export const config: SiteConfig = {
-  name: `freedom links`,
-  title: `a self-hostable microsite for sharing your social links`,
+  name: `Rachel Taylor`,
+  title: `Design • Writing • Process`,
   // You can change the order of the links array below to set
   // the sort order for the links on your page
   links: [
-    // You'll want to delete these entries, unless you
-    // want a deploy link on your site! They are here to
-    // demonstrate how the config works.
-    {
-      Icon: SiVercel,
-      url: `https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fsaeris%2Ffreedom-links`,
-      label: `Deploy to Vercel`
-    },
-    {
-      Icon: SiGithub,
-      url: `https://github.com/saeris/freedom-links`,
-      label: `Source Code`
-    }
+    { Icon: HiGlobeAmericas, url: `https://www.linkedin.com/in/rtaylordesign/`, label:`Portfolio` },
+    { Icon: SiLinkedin, url: `https://www.linkedin.com/in/rtaylordesign/`, label:`LinkedIn` },
+    { Icon: SiGmail, url: `mailto:designer.racheltaylor@gmail.com`, label:`Email` },
+    { Icon: SiSpotify, url: `https://open.spotify.com/user/8btjsb2b9tprvld11rp5x0pol?si=7b438d96f2704417`, label:`Spotify` },
+    { Icon: SiInstagram, url: `https://www.instagram.com/the_crow_wizard/`, label:`Instagram` },
+    { Icon: SiTwitter, url: `https://twitter.com/rtaylor_design`, label:`Twitter` },
+    { Icon: SiGithub, url: `https://github.com/Niracta`, label:`Github` }
+    // Some examples of common platforms to link to
+    // Facebook, Twitch, Youtube, Tiktok, Snapchat, Mastodon, Patreon, Bandcamp
+    // Soundcloud, Tumblr, Artstation, Dribbl, Flickr
   ]
 };
