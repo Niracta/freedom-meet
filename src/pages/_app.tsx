@@ -4,11 +4,60 @@ import Head from "next/head";
 import { config } from "../config";
 import "../internals/global.css";
 
+/** If Nextjs App Directory ever becomes usable
+import { Metadata } from "next";
+
+const title = "Rachel Taylor";
+
+export const metadata: Metadata = {
+  title,
+  description: "Where to find me",
+  creator: title,
+  authors: [
+    { name: title, url: "https://rtaylor.design" },
+    { name: "Drake Costa", url: "https://saeris.gg" }
+  ],
+  manifest: "/manifest.json",
+  themeColor: "#ffffff",
+  openGraph: {
+    title,
+    description: "Where to find me",
+    url: "https://meet.rtaylor.design",
+    siteName: "Rachel Taylor | Social Links",
+    locale: "en-US",
+    type: "website"
+  },
+  twitter: {
+    title,
+    description: "Where to find me",
+    creator: "@rtaylor_design",
+    card: "summary_large_image"
+  },
+  appleWebApp: {
+    title,
+    statusBarStyle: "black-translucent"
+  },
+  robots: {
+    index: false,
+    follow: true,
+    nocache: true,
+    googleBot: {
+      index: true,
+      follow: false,
+      noimageindex: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1
+    }
+  }
+};
+ */
+
 const _app: React.FC<AppProps> = ({ Component, pageProps }) => (
   <>
     <Head>
       <title>{config.name}</title>
-      <link rel="shortcut icon" href="/favicon.ico" />
+      <link rel="shortcut icon" href="/icon.svg" />
       <link rel="manifest" href="/manifest.json" />
       <link rel="manifest" href="/site.webmanifest" />
       <meta name="description" content={config.title} />
@@ -43,6 +92,7 @@ const _app: React.FC<AppProps> = ({ Component, pageProps }) => (
         content="viewport-fit=cover, width=device-width, initial-scale=1"
       />
     </Head>
+    {/* @ts-expect-error */}
     <Component {...pageProps} />
   </>
 );
