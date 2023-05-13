@@ -1,8 +1,10 @@
 import React from "react";
 import type { AppProps } from "next/app";
 import Head from "next/head";
+// eslint-disable-next-line import/no-unresolved
+import { Analytics } from "@vercel/analytics/react";
 import { config } from "../config";
-import "../internals/global.css";
+import "../styles/reset.css";
 
 /** If Nextjs App Directory ever becomes usable
 import { Metadata } from "next";
@@ -94,6 +96,7 @@ const _app: React.FC<AppProps> = ({ Component, pageProps }) => (
     </Head>
     {/* @ts-expect-error */}
     <Component {...pageProps} />
+    <Analytics />
   </>
 );
 
