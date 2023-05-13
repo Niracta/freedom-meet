@@ -2,7 +2,7 @@ import React from "react";
 import type { AppProps } from "next/app";
 import Head from "next/head";
 import { config } from "../config";
-import "../internals/global.css";
+import "../styles/reset.css";
 
 /** If Nextjs App Directory ever becomes usable
 import { Metadata } from "next";
