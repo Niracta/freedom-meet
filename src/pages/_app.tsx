@@ -1,6 +1,7 @@
 import React from "react";
 import type { AppProps } from "next/app";
 import Head from "next/head";
+import { Analytics } from "@vercel/analytics/react";
 import { config } from "../config";
 import "../styles/reset.css";
 
@@ -94,6 +95,7 @@ const _app: React.FC<AppProps> = ({ Component, pageProps }) => (
     </Head>
     {/* @ts-expect-error */}
     <Component {...pageProps} />
+    <Analytics />
   </>
 );
 
