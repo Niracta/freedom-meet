@@ -1,12 +1,12 @@
 import React from "react";
+import { NextPage } from "next";
 import Image from "next/image";
-import * as icons from "react-icons/si";
-import { config } from "../config";
 import avatar from "../../public/avatar.png";
-import styles from "../theme.module.css";
+import { config } from "../config";
 import { Waves } from "../internals/Waves";
+import styles from "../theme.module.css";
 
-const Home: React.FC = () => (
+const Home: NextPage = () => (
   <>
     <Waves />
     <main className={styles.container}>
@@ -22,17 +22,15 @@ const Home: React.FC = () => (
         </figure>
       </article>
       <ul className={styles.links}>
-        {config.links.map(({ platform, url, label }) => {
-          // eslint-disable-next-line import/namespace
-          const Icon = icons[`Si${platform}`];
+        {config.links.map(({ Icon, url, label }) => {
           if (!url.length) {
             return null;
           }
           return (
-            <li key={platform} className={styles.cell}>
+            <li key={Icon.name} className={styles.cell}>
               <a className={styles.socialLink} href={url}>
                 <Icon />
-                {label ?? platform}
+                {label}
               </a>
             </li>
           );

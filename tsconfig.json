@@ -3,7 +3,11 @@
   "ts-node": {
     "transpileOnly": true
   },
-  "include": ["./src/**/*.*", "./src/**/*.d.ts"],
+  "include": [
+    "./src/**/*.*",
+    "./src/**/*.d.ts",
+    ".next/types/**/*.ts"
+  ],
   "exclude": [
     "node_modules",
     "**/__mocks__/**/*",
@@ -48,6 +52,9 @@
     "plugins": [
       {
         "name": "typescript-plugin-css-modules"
+      },
+      {
+        "name": "next"
       }
     ]
   }
