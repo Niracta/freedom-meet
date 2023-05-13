@@ -1,7 +1,5 @@
 import React from "react";
 import Image from "next/image";
-import * as icons from "react-icons/si";
-import { HiGlobeAmericas } from "react-icon/hi";
 import { config } from "../config";
 import avatar from "../../public/avatar.png";
 import styles from "../theme.module.css";
@@ -20,27 +18,14 @@ const Home: React.FC = () => (
       </figure>
     </article>
     <ul className={styles.links}>
-      <li className={styles.cell}>
-        <a className={styles.socialLink} href="http://rtaylor.design">
-          <HiGlobeAmericas />
-          {"Portfolio"}
-        </a>
-      </li>
-      {config.links.map(({ platform, url, label }) => {
-        // eslint-disable-next-line import/namespace
-        const Icon = icons[`Si${platform}`];
-        if (!url.length) {
-          return null;
-        }
-        return (
-          <li key={platform} className={styles.cell}>
+      {config.links.map(({ Icon, url, label }) => (
+          <li key={url} className={styles.cell}>
             <a className={styles.socialLink} href={url}>
               <Icon />
-              {label ?? platform}
+              {label}
             </a>
           </li>
-        );
-      })}
+        ))}
     </ul>
   </main>
 );
