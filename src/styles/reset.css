@@ -3,6 +3,10 @@
  * different browsers
  */
 
+:root {
+  --app-height: 100%;
+}
+
 /* Remove default margins */
 * {
   margin: 0;
@@ -11,16 +15,27 @@
 /* Use % based heights*/
 html,
 body {
-  height: 100%;
-  height: -webkit-fill-available;
   height: 100dvh;
-  overflow: auto;
+  height: var(— app-height);
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
 }
 
-/* Constrain viewport horizontally */
 html {
   background-color: #d9027d;
   overflow-x: hidden;
+  height: -webkit-fill-available;
+  /* Setup rem units (1rem = 10px) */
+  font-size: 62.5%;
+}
+
+#__next {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
 }
 
 /* Use a sensible box model */
@@ -28,17 +43,6 @@ html {
 *::before,
 *::after {
   box-sizing: border-box;
-}
-
-/* Setup rem units (1rem = 10px) */
-html {
-  font-size: 62.5%;
-}
-
-/* Force Body to fill available viewport height, remove default padding */
-body {
-  min-height: 100%;
-  padding: 0;
 }
 
 /* Don't underline Links */
@@ -79,12 +83,4 @@ a {
 
 ul {
   all: unset;
-}
-
-#__next {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
 }

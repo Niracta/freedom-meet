@@ -13,6 +13,10 @@
     "Apple Color Emoji", "Segoe UI Emoji", Segoe UI Symbol, "Noto Color Emoji";
   overflow: auto;
 
+  @supports (-webkit-touch-callout: none) {
+    padding-top: 59px;
+  }
+
   > section {
     display: flex;
     flex-direction: column;

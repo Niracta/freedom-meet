@@ -17,7 +17,7 @@
   cursor: pointer;
 
   @supports (-webkit-touch-callout: none) {
-    top: 36px;
+    top: 71px;
   }
 
   &:hover,
