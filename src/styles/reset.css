@@ -22,9 +22,11 @@ body {
   overflow: hidden;
 }
 
-html:-webkit-full-screen,
-body:-webkit-full-screen {
-  height: 100vh;
+@media (display-mode: standalone) {
+  html,
+  body {
+    height: 100vh;
+  }
 }
 
 #__next {
