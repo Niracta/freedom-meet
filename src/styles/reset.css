@@ -19,6 +19,7 @@ body {
 
 /* Constrain viewport horizontally */
 html {
+  background-color: #d9027d;
   overflow-x: hidden;
 }
 
