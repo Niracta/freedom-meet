@@ -89,7 +89,6 @@ const _app: React.FC<AppProps> = ({ Component, pageProps, router }) => (
         media="screen and (device-width: 320px) and (-webkit-device-pixel-ratio: 2)"
       />
       <meta name="mobile-web-app-capable" content="yes" />
-      <meta name="apple-touch-fullscreen" content="yes" />
       <meta name="apple-mobile-web-app-capable" content="yes" />
       <meta
         name="apple-mobile-web-app-status-bar-style"
