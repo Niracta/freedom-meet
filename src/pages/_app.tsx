@@ -95,10 +95,7 @@ const _app: React.FC<AppProps> = ({ Component, pageProps, router }) => (
         name="apple-mobile-web-app-status-bar"
         content="black-translucent"
       />
-      <meta
-        name="apple-mobile-web-app-status-bar-style"
-        content="black-translucent"
-      />
+      <meta name="apple-mobile-web-app-status-bar-style" content="default" />
       <meta
         name="viewport"
         content="viewport-fit=cover, width=device-width, initial-scale=1, user-scalable = no"
