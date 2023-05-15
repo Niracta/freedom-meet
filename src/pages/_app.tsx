@@ -82,11 +82,19 @@ const _app: React.FC<AppProps> = ({ Component, pageProps, router }) => (
       <meta name="twitter:image" content="/api/og" />
       <meta name="twitter:image:alt" content={config.name} />
       {/* iOS */}
+      <link rel="apple-touch-icon" href="touch-icon.png" />
+      <link
+        rel="apple-touch-startup-image"
+        href="splash-screen.png"
+        media="screen and (device-width: 320px) and (-webkit-device-pixel-ratio: 2)"
+      />
+      <meta name="mobile-web-app-capable" content="yes" />
+      <meta name="apple-touch-fullscreen" content="yes" />
+      <meta name="apple-mobile-web-app-capable" content="yes" />
       <meta
         name="apple-mobile-web-app-status-bar"
         content="black-translucent"
       />
-      <meta name="apple-mobile-web-app-capable" content="yes" />
       <meta
         name="apple-mobile-web-app-status-bar-style"
         content="black-translucent"
