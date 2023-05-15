@@ -36,6 +36,15 @@
   }
 }
 
+.links {
+  display: flex;
+  flex-direction: column;
+  gap: inherit;
+  width: 100%;
+  max-width: 80ch;
+  height: fit-content;
+}
+
 .frame {
   all: unset;
   position: relative;

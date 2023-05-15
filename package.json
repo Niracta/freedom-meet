@@ -1,10 +1,13 @@
 {
-  "name": "freedom-links",
-  "description": "a self-hostable microsite for sharing your social links",
-  "version": "2022.12.18",
+  "name": "meet-rtaylor-design",
+  "description": "social links microsite",
+  "version": "2023.05.14",
   "main": "src/pages/index.tsx",
-  "repository": "git@github.com:Saeris/freedom-links.git",
-  "author": "Drake Costa <drake@saeris.io>",
+  "repository": "git@github.com:Niracta/freedom-meet.git",
+  "contributors": [
+    "Rachel Taylor <designer.racheltaylor@gmail.com> (https://meet.rtaylor.design)",
+    "Drake Costa <drake@saeris.io> (https://saeris.gg)"
+  ],
   "license": "MIT",
   "private": true,
   "scripts": {
@@ -20,9 +23,11 @@
     "test:check": "tsc --noEmit"
   },
   "dependencies": {
+    "@react-three/drei": "^9.68.3",
     "@react-three/fiber": "^8.13.0",
     "@vercel/analytics": "^1.0.1",
     "@vercel/og": "^0.5.4",
+    "framer-motion": "^10.12.10",
     "next": "^13.4.2",
     "postcss": "^8.4.20",
     "postcss-flexbugs-fixes": "^5.0.2",

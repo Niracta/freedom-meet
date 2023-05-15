@@ -1,9 +1,9 @@
-import React, { useRef } from "react";
-import { Canvas, useFrame } from "@react-three/fiber";
+import { extend, type ReactThreeFiber } from "@react-three/fiber";
+import { shaderMaterial } from "@react-three/drei";
 import type { ShaderMaterial } from "three";
-import { DoubleSide, Color, Vector2 } from "three";
+import { Color, Vector2 } from "three";
 
-const perlin = `
+const perlin = /*glsl*/ `
 #define GLSLIFY 1
 #define MAX_FBM_ITERATIONS 30
 #define gln_PI 3.1415926538
@@ -52,7 +52,7 @@ float gln_perlin(vec2 P) {
 }
 `;
 
-const vertexShader = `
+const vertexShader = /*glsl*/ `
 ${perlin}
 
 uniform float time;
@@ -83,7 +83,7 @@ void main() {
 }
 `;
 
-const fragmentShader = `
+const fragmentShader = /*glsl*/ `
 ${perlin}
 
 uniform float time;
@@ -107,48 +107,33 @@ void main() {
 }
 `;
 
-const Mesh: React.FC = () => {
-  const shader = useRef<ShaderMaterial>(null);
-  useFrame(() => {
-    if (shader.current) {
-      shader.current.uniforms.time.value += 0.001 * 2.16;
-    }
-  });
-
-  return (
-    <mesh rotation={[-1.75, 0, 0]}>
-      <planeGeometry args={[1, 1, 100, 100]} />
-      <shaderMaterial
-        ref={shader}
-        side={DoubleSide}
-        attach="material"
-        uniforms={{
-          color1: { value: new Color(`#ffee35`) },
-          color2: { value: new Color(`#f70383`) },
-          color3: { value: new Color(`#02a6fc`) },
-          backgroundColor: { value: new Color(`#fff`) },
-          colorSmoothing: { value: 0.5 },
-          foldFrequency: { value: 0.05 },
-          foldHeight: { value: 4.0 },
-          waveFrequency: { value: 1.2 },
-          waveAmplitude: { value: 0.83 },
-          waveDirection: { value: new Vector2(-0.1, 1) },
-          time: { value: 0 }
-        }}
-        vertexShader={vertexShader}
-        fragmentShader={fragmentShader}
-      />
-    </mesh>
-  );
-};
-
-export const Waves: React.FC = () => (
-  <Canvas
-    orthographic
-    gl={{ preserveDrawingBuffer: true }}
-    camera={{ position: [0.3, 4.8, 1.43], zoom: 2205 }}
-    style={{ position: `absolute` }}
-  >
-    <Mesh />
-  </Canvas>
+export const WavesMaterial = shaderMaterial(
+  {
+    color1: new Color(`#ffee35`),
+    color2: new Color(`#f70383`),
+    color3: new Color(`#02a6fc`),
+    backgroundColor: new Color(`#fff`),
+    colorSmoothing: 0.5,
+    foldFrequency: 0.05,
+    foldHeight: 4.0,
+    waveFrequency: 1.2,
+    waveAmplitude: 0.83,
+    waveDirection: new Vector2(-0.1, 1),
+    time: 0
+  },
+  vertexShader,
+  fragmentShader
 );
+
+extend({ WavesMaterial });
+
+declare global {
+  namespace JSX {
+    interface IntrinsicElements {
+      wavesMaterial: ReactThreeFiber.Object3DNode<
+        ShaderMaterial,
+        typeof WavesMaterial
+      >;
+    }
+  }
+}

@@ -4,6 +4,7 @@ import Head from "next/head";
 // eslint-disable-next-line import/no-unresolved
 import { Analytics } from "@vercel/analytics/react";
 import { config } from "../config";
+import { Layout } from "../components/Layout";
 import "../styles/reset.css";
 
 /** If Nextjs App Directory ever becomes usable
@@ -20,7 +21,7 @@ export const metadata: Metadata = {
     { name: "Drake Costa", url: "https://saeris.gg" }
   ],
   manifest: "/manifest.json",
-  themeColor: "#ffffff",
+  themeColor: "#D9027D",
   openGraph: {
     title,
     description: "Where to find me",
@@ -55,15 +56,16 @@ export const metadata: Metadata = {
 };
  */
 
-const _app: React.FC<AppProps> = ({ Component, pageProps }) => (
+const _app: React.FC<AppProps> = ({ Component, pageProps, router }) => (
   <>
     <Head>
       <title>{config.name}</title>
-      <link rel="shortcut icon" href="/icon.svg" />
-      <link rel="manifest" href="/manifest.json" />
-      <link rel="manifest" href="/site.webmanifest" />
+      <link rel="icon" href="icon.svg" />
+      <link rel="mask-icon" color="white" href="icon.svg" />
+      <link rel="manifest" href="manifest.json" />
+      <link rel="manifest" href="site.webmanifest" />
       <meta name="description" content={config.title} />
-      <meta name="image" content="*.vercel.app/api/og" />
+      <meta name="image" content="/api/og" />
       {/* OpenGraph */}
       <meta property="og:site_name" content={config.name} />
       <meta property="og:url" content={process.env.NEXT_PUBLIC_VERCEL_URL} />
@@ -71,19 +73,22 @@ const _app: React.FC<AppProps> = ({ Component, pageProps }) => (
       <meta property="og:title" content={config.name} />
       <meta property="og:description" content={config.title} />
       <meta property="og:locale" content="en_US" />
-      <meta property="og:image" content="*.vercel.app/api/og" />
+      <meta property="og:image" content="/api/og" />
       <meta property="og:image:alt" content={config.title} />
       {/* Twitter */}
       <meta name="twitter:title" content={config.name} />
       <meta name="twitter:description" content={config.title} />
       <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:image" content="*.vercel.app/api/og" />
+      <meta name="twitter:image" content="/api/og" />
       <meta name="twitter:image:alt" content={config.name} />
       {/* iOS */}
-      <meta
-        name="apple-mobile-web-app-status-bar"
-        content="black-translucent"
+      <link rel="apple-touch-icon" href="touch-icon.png" />
+      <link
+        rel="apple-touch-startup-image"
+        href="splash-screen.png"
+        media="screen and (device-width: 320px) and (-webkit-device-pixel-ratio: 2)"
       />
+      <meta name="mobile-web-app-capable" content="yes" />
       <meta name="apple-mobile-web-app-capable" content="yes" />
       <meta
         name="apple-mobile-web-app-status-bar-style"
@@ -91,11 +96,13 @@ const _app: React.FC<AppProps> = ({ Component, pageProps }) => (
       />
       <meta
         name="viewport"
-        content="viewport-fit=cover, width=device-width, initial-scale=1"
+        content="viewport-fit=cover, width=device-width, height=device-height, initial-scale=1, user-scalable=no"
       />
     </Head>
-    {/* @ts-expect-error */}
-    <Component {...pageProps} />
+    <Layout>
+      {/* @ts-expect-error */}
+      <Component key={router.route} {...pageProps} />
+    </Layout>
     <Analytics />
   </>
 );

@@ -8,18 +8,34 @@
   margin: 0;
 }
 
-/* Use % based heights*/
+html {
+  background-color: #d9027d;
+  /* Setup rem units (1rem = 10px) */
+  font-size: 62.5%;
+}
+
 html,
 body {
   height: 100%;
-  height: -webkit-fill-available;
   height: 100dvh;
-  overflow: auto;
+  padding: 0;
+  overflow: hidden;
 }
 
-/* Constrain viewport horizontally */
-html {
-  overflow-x: hidden;
+@media (display-mode: standalone) {
+  html,
+  body {
+    height: 100vh;
+  }
+}
+
+#__next {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
 }
 
 /* Use a sensible box model */
@@ -27,17 +43,6 @@ html {
 *::before,
 *::after {
   box-sizing: border-box;
-}
-
-/* Setup rem units (1rem = 10px) */
-html {
-  font-size: 62.5%;
-}
-
-/* Force Body to fill available viewport height, remove default padding */
-body {
-  min-height: 100%;
-  padding: 0;
 }
 
 /* Don't underline Links */
@@ -78,12 +83,4 @@ a {
 
 ul {
   all: unset;
-}
-
-#__next {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
 }
