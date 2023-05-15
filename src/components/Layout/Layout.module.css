@@ -23,5 +23,7 @@
 }
 
 body:-webkit-full-screen .container {
-  padding-top: 59px;
+  @media (display-mode: standalone) {
+    padding-top: 59px;
+  }
 }

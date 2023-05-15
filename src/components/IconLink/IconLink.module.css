@@ -29,5 +29,7 @@
 }
 
 body:-webkit-full-screen .link {
-  top: calc(5.9rem + 2.4rem);
+  @media (display-mode: standalone) {
+    top: calc(5.9rem + 2.4rem);
+  }
 }

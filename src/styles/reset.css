@@ -12,9 +12,16 @@
   margin: 0;
 }
 
+html {
+  background-color: #d9027d;
+  /* Setup rem units (1rem = 10px) */
+  font-size: 62.5%;
+}
+
 /* Use % based heights*/
 html,
 body {
+  height: -webkit-fill-available;
   height: 100dvh;
   height: var(— app-height);
   padding: 0;
@@ -22,21 +29,17 @@ body {
   overflow: hidden;
 }
 
-html {
-  background-color: #d9027d;
-  overflow-x: hidden;
-  height: -webkit-fill-available;
-  /* Setup rem units (1rem = 10px) */
-  font-size: 62.5%;
-}
-
 #__next {
   display: flex;
   flex-direction: column;
   width: 100%;
   height: 100%;
-  height: var(— app-height);
+  height: var(--app-height);
   overflow: hidden;
+  /* https://webkit.org/blog/7929/designing-websites-for-iphone-x/ */
+  padding-left: env(safe-area-inset-left);
+  padding-right: env(safe-area-inset-right);
+  padding-bottom: env(safe-area-inset-bottom);
 }
 
 /* Use a sensible box model */

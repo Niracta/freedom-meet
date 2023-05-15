@@ -92,13 +92,12 @@ const _app: React.FC<AppProps> = ({ Component, pageProps, router }) => (
       <meta name="apple-touch-fullscreen" content="yes" />
       <meta name="apple-mobile-web-app-capable" content="yes" />
       <meta
-        name="apple-mobile-web-app-status-bar"
+        name="apple-mobile-web-app-status-bar-style"
         content="black-translucent"
       />
-      <meta name="apple-mobile-web-app-status-bar-style" content="default" />
       <meta
         name="viewport"
-        content="viewport-fit=cover, width=device-width, initial-scale=1, user-scalable = no"
+        content="viewport-fit=cover, width=device-width, height=device-height, initial-scale=1, user-scalable=no"
       />
     </Head>
     <Layout>
