@@ -12,7 +12,7 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({
       <AnimatePresence
         initial={false}
         mode="wait"
-        onExitComplete={() => window.scrollTo(0, 0)}
+        onExitComplete={(): void => window.scrollTo(0, 0)}
       >
         {children}
       </AnimatePresence>
