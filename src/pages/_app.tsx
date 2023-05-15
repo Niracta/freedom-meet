@@ -101,7 +101,7 @@ const _app: React.FC<AppProps> = ({ Component, pageProps, router }) => (
       />
       <meta
         name="viewport"
-        content="viewport-fit=cover, width=device-width, initial-scale=1"
+        content="viewport-fit=cover, width=device-width, initial-scale=1, user-scalable = no"
       />
     </Head>
     <Layout>

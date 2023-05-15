@@ -16,6 +16,10 @@
   color: rgba(244, 244, 245, var(--fg-alpha));
   cursor: pointer;
 
+  @supports (-webkit-touch-callout: none) {
+    top: 36px;
+  }
+
   &:hover,
   &:focus {
     --fg-alpha: 1;
