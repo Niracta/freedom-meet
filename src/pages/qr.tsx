@@ -8,7 +8,7 @@ const Page: NextPage = () => (
     <Stack style={{ marginBlock: `auto` }}>
       <QRCode />
     </Stack>
-    <IconLink href="/">
+    <IconLink title="Back to Home" href="/">
       <HiXMark />
     </IconLink>
   </>

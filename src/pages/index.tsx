@@ -12,7 +12,7 @@ const Home: NextPage = () => {
         <Profile name={name} title={title} />
         <Links links={links} />
       </Stack>
-      <IconLink href="/qr">
+      <IconLink title="View QR Code" href="/qr">
         <HiQrCode />
       </IconLink>
     </>

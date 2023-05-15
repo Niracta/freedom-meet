@@ -1,4 +1,5 @@
 .container {
+  postion: relative;
   z-index: 1;
   display: flex;
   flex-direction: column;
@@ -6,8 +7,6 @@
   gap: 1.6rem;
   width: 100%;
   height: 100%;
-  height: -webkit-fill-available;
-  height: 100dvh;
   /* https://webkit.org/blog/7929/designing-websites-for-iphone-x/ */
   padding: env(safe-area-inset-top) env(safe-area-inset-right)
     max(3.2rem, env(safe-area-inset-bottom)) env(safe-area-inset-left);
