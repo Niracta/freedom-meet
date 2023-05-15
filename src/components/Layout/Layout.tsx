@@ -1,4 +1,4 @@
-import React, { useLayoutEffect } from "react";
+import React, { useEffect } from "react";
 import { AnimatePresence } from "framer-motion";
 import { Waves } from "../Waves";
 import styles from "./Layout.module.css";
@@ -15,7 +15,7 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({
     }
   };
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     if (typeof window !== `undefined`) {
       window.addEventListener(`resize`, appHeight);
     }
