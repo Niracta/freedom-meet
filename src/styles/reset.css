@@ -17,10 +17,14 @@ html {
 html,
 body {
   height: 100%;
-  height: -webkit-fill-available;
   height: 100dvh;
   padding: 0;
   overflow: hidden;
+}
+
+html:-webkit-full-screen,
+body:-webkit-full-screen {
+  height: 100vh;
 }
 
 #__next {

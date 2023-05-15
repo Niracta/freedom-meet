@@ -24,8 +24,3 @@
     backface-visibility: hidden;
   }
 }
-
-body:-webkit-full-screen .container {
-  @media (orientation: portrait) {
-  }
-}
